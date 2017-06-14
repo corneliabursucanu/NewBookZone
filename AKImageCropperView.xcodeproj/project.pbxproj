@@ -25,6 +25,7 @@
 		01C48FBC1DEC250100FBBE34 /* CustomImageCropperOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C48FBB1DEC250100FBBE34 /* CustomImageCropperOverlayView.swift */; };
 		01F61BE51E4DC7B800977E33 /* IC_CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F61BE41E4DC7B800977E33 /* IC_CGFloatExtension.swift */; };
 		01FA13EF1DDF0C6E006B8C3A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FA13EE1DDF0C6E006B8C3A /* Constants.swift */; };
+		23234014CC9026E1D5997658 /* Pods_AKImageCropperViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF322A37A7B3C246D0A4051 /* Pods_AKImageCropperViewExample.framework */; };
 		4356D6141B8F3DE90033FDBD /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4356D6131B8F3DE90033FDBD /* ImageViewController.swift */; };
 		43CBB4031B870EBC00C8F9AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CBB4021B870EBC00C8F9AE /* AppDelegate.swift */; };
 		43CBB4051B870EBC00C8F9AE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CBB4041B870EBC00C8F9AE /* HomeViewController.swift */; };
@@ -36,7 +37,11 @@
 		55D802B51EEF3C20004CA04A /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D802B41EEF3C20004CA04A /* TesseractOCR.framework */; };
 		55D802B81EEF3C3A004CA04A /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D802B71EEF3C3A004CA04A /* libstdc++.6.0.9.tbd */; };
 		55D802BA1EEF3C4E004CA04A /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D802B91EEF3C4E004CA04A /* CoreImage.framework */; };
-		55D802BE1EEF3D1F004CA04A /* FakeObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D802BD1EEF3D1F004CA04A /* FakeObj.m */; };
+		55D802C01EEF541B004CA04A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55D802BF1EEF541B004CA04A /* GoogleService-Info.plist */; };
+		55D802C21EF14030004CA04A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D802C11EF14030004CA04A /* DataService.swift */; };
+		55D802C41EF14075004CA04A /* BookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D802C31EF14075004CA04A /* BookVC.swift */; };
+		55D802C61EF1DFF7004CA04A /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D802C51EF1DFF7004CA04A /* SignInVC.swift */; };
+		C0498FAB77824B26F8C4FB1C /* Pods_AKImageCropperView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7131BE0AFB31BCFA3DA06476 /* Pods_AKImageCropperView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +87,8 @@
 		01C48FBB1DEC250100FBBE34 /* CustomImageCropperOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageCropperOverlayView.swift; sourceTree = "<group>"; };
 		01F61BE41E4DC7B800977E33 /* IC_CGFloatExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IC_CGFloatExtension.swift; sourceTree = "<group>"; };
 		01FA13EE1DDF0C6E006B8C3A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1FF322A37A7B3C246D0A4051 /* Pods_AKImageCropperViewExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AKImageCropperViewExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A9BC23E92FAF78690DFFC82 /* Pods-AKImageCropperViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKImageCropperViewExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AKImageCropperViewExample/Pods-AKImageCropperViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		4356D6131B8F3DE90033FDBD /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		43CBB3FD1B870EBC00C8F9AE /* AKImageCropperViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKImageCropperViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CBB4011B870EBC00C8F9AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,8 +103,14 @@
 		55D802B71EEF3C3A004CA04A /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		55D802B91EEF3C4E004CA04A /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		55D802BB1EEF3D1E004CA04A /* AKImageCropperViewExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AKImageCropperViewExample-Bridging-Header.h"; sourceTree = "<group>"; };
-		55D802BC1EEF3D1F004CA04A /* FakeObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeObj.h; sourceTree = "<group>"; };
-		55D802BD1EEF3D1F004CA04A /* FakeObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeObj.m; sourceTree = "<group>"; };
+		55D802BF1EEF541B004CA04A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		55D802C11EF14030004CA04A /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		55D802C31EF14075004CA04A /* BookVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookVC.swift; sourceTree = "<group>"; };
+		55D802C51EF1DFF7004CA04A /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		5B2C6F70CB745D148E73E010 /* Pods-AKImageCropperView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKImageCropperView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AKImageCropperView/Pods-AKImageCropperView.debug.xcconfig"; sourceTree = "<group>"; };
+		7131BE0AFB31BCFA3DA06476 /* Pods_AKImageCropperView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AKImageCropperView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EAFB698D9C0AD1022570B1D /* Pods-AKImageCropperView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKImageCropperView.release.xcconfig"; path = "Pods/Target Support Files/Pods-AKImageCropperView/Pods-AKImageCropperView.release.xcconfig"; sourceTree = "<group>"; };
+		B3581BF0836342FFB933B1B4 /* Pods-AKImageCropperViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKImageCropperViewExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AKImageCropperViewExample/Pods-AKImageCropperViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0498FAB77824B26F8C4FB1C /* Pods_AKImageCropperView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +130,7 @@
 				55D802B81EEF3C3A004CA04A /* libstdc++.6.0.9.tbd in Frameworks */,
 				55D802B51EEF3C20004CA04A /* TesseractOCR.framework in Frameworks */,
 				016E5EFE1DFFE77400662D31 /* AKImageCropperView.framework in Frameworks */,
+				23234014CC9026E1D5997658 /* Pods_AKImageCropperViewExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,11 +179,13 @@
 			isa = PBXGroup;
 			children = (
 				55D802B41EEF3C20004CA04A /* TesseractOCR.framework */,
+				55D802BF1EEF541B004CA04A /* GoogleService-Info.plist */,
 				55D802B11EEF3BDA004CA04A /* tessdata */,
 				011028A81DFFDD24002AA94E /* AKImageCropperView */,
 				43CBB3FF1B870EBC00C8F9AE /* AKImageCropper */,
 				43CBB3FE1B870EBC00C8F9AE /* Products */,
 				55D802B61EEF3C3A004CA04A /* Frameworks */,
+				C0E3499826118D0138A9FCC2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,8 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				43CBB4021B870EBC00C8F9AE /* AppDelegate.swift */,
-				55D802BC1EEF3D1F004CA04A /* FakeObj.h */,
-				55D802BD1EEF3D1F004CA04A /* FakeObj.m */,
 				01FA13EE1DDF0C6E006B8C3A /* Constants.swift */,
 				43CBB4231B8716EA00C8F9AE /* CropperViewController.swift */,
 				01C48FBB1DEC250100FBBE34 /* CustomImageCropperOverlayView.swift */,
@@ -201,6 +216,9 @@
 			isa = PBXGroup;
 			children = (
 				4356D6131B8F3DE90033FDBD /* ImageViewController.swift */,
+				55D802C31EF14075004CA04A /* BookVC.swift */,
+				55D802C11EF14030004CA04A /* DataService.swift */,
+				55D802C51EF1DFF7004CA04A /* SignInVC.swift */,
 				43CBB40B1B870EBC00C8F9AE /* LaunchScreen.xib */,
 				43CBB4061B870EBC00C8F9AE /* Main.storyboard */,
 				43CBB4041B870EBC00C8F9AE /* HomeViewController.swift */,
@@ -215,8 +233,21 @@
 			children = (
 				55D802B91EEF3C4E004CA04A /* CoreImage.framework */,
 				55D802B71EEF3C3A004CA04A /* libstdc++.6.0.9.tbd */,
+				7131BE0AFB31BCFA3DA06476 /* Pods_AKImageCropperView.framework */,
+				1FF322A37A7B3C246D0A4051 /* Pods_AKImageCropperViewExample.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0E3499826118D0138A9FCC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B2C6F70CB745D148E73E010 /* Pods-AKImageCropperView.debug.xcconfig */,
+				9EAFB698D9C0AD1022570B1D /* Pods-AKImageCropperView.release.xcconfig */,
+				B3581BF0836342FFB933B1B4 /* Pods-AKImageCropperViewExample.debug.xcconfig */,
+				3A9BC23E92FAF78690DFFC82 /* Pods-AKImageCropperViewExample.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,10 +268,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 011028B01DFFDD24002AA94E /* Build configuration list for PBXNativeTarget "AKImageCropperView" */;
 			buildPhases = (
+				09BE20216E4F4CE96C4FC574 /* [CP] Check Pods Manifest.lock */,
 				011028A21DFFDD24002AA94E /* Sources */,
 				011028A31DFFDD24002AA94E /* Frameworks */,
 				011028A41DFFDD24002AA94E /* Headers */,
 				011028A51DFFDD24002AA94E /* Resources */,
+				EDA50A5ADABB175F1E15F93A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -255,10 +288,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43CBB41C1B870EBC00C8F9AE /* Build configuration list for PBXNativeTarget "AKImageCropperViewExample" */;
 			buildPhases = (
+				42DDAA0F574ADD859E268572 /* [CP] Check Pods Manifest.lock */,
 				43CBB3F91B870EBC00C8F9AE /* Sources */,
 				43CBB3FA1B870EBC00C8F9AE /* Frameworks */,
 				43CBB3FB1B870EBC00C8F9AE /* Resources */,
 				016E5F021DFFE77400662D31 /* Embed Frameworks */,
+				782DC733485960146D597004 /* [CP] Embed Pods Frameworks */,
+				1699CE99C2DCC50DE00C9838 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -326,12 +362,91 @@
 			files = (
 				43CBB4081B870EBC00C8F9AE /* Main.storyboard in Resources */,
 				55D802B21EEF3BDA004CA04A /* tessdata in Resources */,
+				55D802C01EEF541B004CA04A /* GoogleService-Info.plist in Resources */,
 				43CBB40D1B870EBC00C8F9AE /* LaunchScreen.xib in Resources */,
 				43CBB40A1B870EBC00C8F9AE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09BE20216E4F4CE96C4FC574 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1699CE99C2DCC50DE00C9838 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AKImageCropperViewExample/Pods-AKImageCropperViewExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42DDAA0F574ADD859E268572 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		782DC733485960146D597004 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AKImageCropperViewExample/Pods-AKImageCropperViewExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDA50A5ADABB175F1E15F93A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AKImageCropperView/Pods-AKImageCropperView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		011028A21DFFDD24002AA94E /* Sources */ = {
@@ -359,10 +474,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				43CBB4051B870EBC00C8F9AE /* HomeViewController.swift in Sources */,
+				55D802C21EF14030004CA04A /* DataService.swift in Sources */,
+				55D802C61EF1DFF7004CA04A /* SignInVC.swift in Sources */,
 				01C48FBC1DEC250100FBBE34 /* CustomImageCropperOverlayView.swift in Sources */,
+				55D802C41EF14075004CA04A /* BookVC.swift in Sources */,
 				43CBB4241B8716EA00C8F9AE /* CropperViewController.swift in Sources */,
 				01FA13EF1DDF0C6E006B8C3A /* Constants.swift in Sources */,
-				55D802BE1EEF3D1F004CA04A /* FakeObj.m in Sources */,
 				43CBB4031B870EBC00C8F9AE /* AppDelegate.swift in Sources */,
 				4356D6141B8F3DE90033FDBD /* ImageViewController.swift in Sources */,
 			);
@@ -400,6 +517,7 @@
 /* Begin XCBuildConfiguration section */
 		011028B11DFFDD24002AA94E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B2C6F70CB745D148E73E010 /* Pods-AKImageCropperView.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -432,6 +550,7 @@
 		};
 		011028B21DFFDD24002AA94E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EAFB698D9C0AD1022570B1D /* Pods-AKImageCropperView.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -550,6 +669,7 @@
 		};
 		43CBB41D1B870EBC00C8F9AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3581BF0836342FFB933B1B4 /* Pods-AKImageCropperViewExample.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -564,7 +684,10 @@
 				INFOPLIST_FILE = AKImageCropperViewExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lstdc++",
+				);
 				OTHER_SWIFT_FLAGS = "-D AKImageCropperViewDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.company.BookZone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -576,6 +699,7 @@
 		};
 		43CBB41E1B870EBC00C8F9AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A9BC23E92FAF78690DFFC82 /* Pods-AKImageCropperViewExample.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -591,7 +715,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = No;
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lstdc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.company.BookZone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AKImageCropperViewExample/AKImageCropperViewExample-Bridging-Header.h";

@@ -1,15 +1,7 @@
-//
-//  AppDelegate.swift
-//  AKImageCropperDemo
-//  GitHub: https://github.com/artemkrachulov/AKImageCropper
-//
-//  Created by Krachulov Artem
-//  Copyright (c) 2015 Krachulov Artem. All rights reserved.
-//  Website: http://www.artemkrachulov.com/
-//
+
 
 import UIKit
-
+import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +9,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+     
+        
+        FirebaseApp.configure()
+        
         return true
     }
 

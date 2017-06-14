@@ -1,10 +1,4 @@
-//
-//  Constants.swift
-//  Demo
-//
-//  Created by Artem Krachulov on 11/18/16.
-//  Copyright © 2016 Artem Krachulov. All rights reserved.
-//
+
 
 import Foundation
 
