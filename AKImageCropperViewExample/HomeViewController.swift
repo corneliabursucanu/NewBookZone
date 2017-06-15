@@ -1,6 +1,9 @@
 
 
 import UIKit
+import FirebaseAuth
+import SwiftKeychainWrapper
+
 
 final class HomeViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     let imagePicker = UIImagePickerController()
@@ -18,6 +21,23 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
     // MARK: -- Actions
     
 
+    
+    @IBAction func logOutBtnTapped(_ sender: UIButton) {
+    
+ 
+        
+            let _ = KeychainWrapper.standard.removeObject(forKey: "uid")
+            try! Auth.auth().signOut()
+            print("FKeychain removed successfully")
+              _ = navigationController?.popViewController(animated: true)
+        }
+        
+
+        
+    
+    
+    
+    
     
     @IBAction func galleryAction() {
         
@@ -54,7 +74,7 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.isNavigationBarHidden = false
+       self.navigationController?.isNavigationBarHidden = true
     }
     
     

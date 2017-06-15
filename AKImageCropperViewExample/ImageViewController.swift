@@ -39,7 +39,7 @@ final class ImageViewController: UIViewController {
         
         imageView.image = image
         
-        if let tesseract = G8Tesseract(language: "eng") {
+    /*    if let tesseract = G8Tesseract(language: "eng") {
             
             tesseract.image = image.g8_blackAndWhite()
             tesseract.recognize()
@@ -48,8 +48,8 @@ final class ImageViewController: UIViewController {
             
             print(tesseract.recognizedText)
            
-        }
-        
+      }
+ */       
         
     }
 }
