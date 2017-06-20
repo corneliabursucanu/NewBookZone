@@ -15,14 +15,24 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1AH-gE-Qfb">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_bookzone_footer1024x1024" translatesAutoresizingMaskIntoConstraints="NO" id="8Er-DK-4xj">
+                    <rect key="frame" x="40" y="269.5" width="295" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="H9Q-sM-1PV"/>
+                    </constraints>
+                </imageView>
             </subviews>
+            <color key="backgroundColor" red="0.50196078430000002" green="0.79607843140000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8Er-DK-4xj" firstAttribute="centerY" secondItem="OND-g9-1i5" secondAttribute="centerY" id="2Cy-Gw-I1G"/>
+                <constraint firstItem="8Er-DK-4xj" firstAttribute="leading" secondItem="OND-g9-1i5" secondAttribute="leading" constant="40" id="Idf-Tm-pXb"/>
+                <constraint firstItem="8Er-DK-4xj" firstAttribute="centerX" secondItem="OND-g9-1i5" secondAttribute="centerX" id="aNm-dr-63G"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="588.5" y="578.5"/>
+            <point key="canvasLocation" x="588" y="578"/>
         </view>
     </objects>
+    <resources>
+        <image name="logo_bookzone_footer1024x1024" width="1024" height="1024"/>
+    </resources>
 </document>

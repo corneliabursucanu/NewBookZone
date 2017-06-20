@@ -1,8 +1,16 @@
 
 import UIKit
+import SafariServices
 
-final class ImageViewController: UIViewController {
+
+
+final class ImageViewController: UIViewController{
+//, SFSafariViewControllerDelegate {
     
+    
+   //  private var urlString:String = "https://goodread.ro/recenzie-povestea-faridei-fata-care-invins-isis-de-farida-khalaf-andrea-c-hoffmann/"
+    
+    var tessText = " "
     // MARK: - Properties
     
     var image: UIImage!
@@ -20,18 +28,7 @@ final class ImageViewController: UIViewController {
         _ = navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func showListAction(_ sender: UIButton) {
-        
-        if presentingViewController != nil {
-            
-            _ = navigationController?.popToRootViewController(animated: true)
-
-        } else {
-        
-            _ = navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
-        }
-    }
-    
+   
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -66,12 +63,16 @@ final class ImageViewController: UIViewController {
         tesseract.pageSegmentationMode = .auto
         // 5
         tesseract.maximumRecognitionTime = 60.0
+        
+        
+       
         // 6
         tesseract.image = image.g8_blackAndWhite()
         tesseract.recognize()
-        print(tesseract.recognizedText)
-        let trimmedString = tesseract.recognizedText.trimmingCharacters(in: .whitespaces)
-        print(trimmedString)
+        tessText = tesseract.recognizedText.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+       
+        print("begining\(tessText)the end")
+       
         
         // 7
         removeActivityIndicator()
@@ -83,6 +84,26 @@ final class ImageViewController: UIViewController {
         activityIndicator = nil
     }
     
+    @IBAction func nextBtnTapped(_ sender: Any) {
+        
+        /*let svc = SFSafariViewController(url: NSURL(string: self.urlString)! as URL, entersReaderIfAvailable: true)
+        svc.delegate = self
+        self.present(svc, animated: true, completion: nil)
+         
+    */
+        
+     /*  let book = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "bookVC") as! BookVC
+        self.present(book, animated: true, completion: nil)*/
+        
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController)
+    {
+        let home = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+        
+        
+        
+        self.present(home, animated: true, completion: nil)    }
     
     func scaleImage(_ image: UIImage, maxDimension: CGFloat) -> UIImage {
         
@@ -105,5 +126,19 @@ final class ImageViewController: UIViewController {
         UIGraphicsEndImageContext()
         
         return scaledImage!
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "bookVC"{
+            if let destination = segue.destination as? BookVC {
+                print(tessText)
+                destination.isbn = tessText
+            
+            }
+    
+        
+        
+        
+        }
     }
 }

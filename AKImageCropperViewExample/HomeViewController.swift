@@ -29,8 +29,11 @@ final class HomeViewController: UIViewController, UIImagePickerControllerDelegat
             let _ = KeychainWrapper.standard.removeObject(forKey: "uid")
             try! Auth.auth().signOut()
             print("FKeychain removed successfully")
-              _ = navigationController?.popViewController(animated: true)
-        }
+            let signin = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "signInVC") as! SignInVC
+        
+        
+        
+        self.present(signin, animated: true, completion: nil)            }
         
 
         
