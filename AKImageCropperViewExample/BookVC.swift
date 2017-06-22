@@ -9,11 +9,12 @@
 import UIKit
 import SafariServices
 import FirebaseCore
-
+import Firebase
+import WebKit
 
 class BookVC: UIViewController, SFSafariViewControllerDelegate  {
     
-
+   
     var isbn = " "
     
     @IBOutlet weak var msgLabel: UILabel!
@@ -24,6 +25,11 @@ class BookVC: UIViewController, SFSafariViewControllerDelegate  {
         super.viewDidLoad()
         print(isbn)
         msgLabel.isHidden = true
+        
+     //  let trimmed = isbn.replacingOccurrences(of: " ", with: "")
+    //  print(trimmed)
+        
+        
         let startIndex = isbn.index(isbn.startIndex, offsetBy: 5)
         let endIndex = isbn.index(isbn.startIndex, offsetBy: 21)
         
@@ -33,14 +39,45 @@ class BookVC: UIViewController, SFSafariViewControllerDelegate  {
      
         DataService.ds.REF_BOOKS.queryOrdered(byChild: "ISBN").queryEqual(toValue: newisbn).observeSingleEvent(of: .value, with: {(snapshot) in
             
-            if snapshot.exists() {
+           if snapshot.exists() {
                
-              print(snapshot.value)
+              print(snapshot.value!)
+            
+    
+            
+                if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                    for snap in snapshot {
+                       print("SNAP\(snap)")
+                        if let bookDict = snap.value as? Dictionary<String, String> {
+                            
+                            let key = snap.key
+                            let book = BookModel(bookKey: key, bookData:bookDict)
+                            print(book.ISBN)
+                        
+                        
+                        
+                        
+                        }
+                        
+                        
+                        
+                        
+                  }
+                    
+           }
+            
+        
+           }
+                
+                
+                
+             /*
                 let svc = SFSafariViewController(url: NSURL(string: self.urlString)! as URL, entersReaderIfAvailable: true)
                 svc.delegate = self
                self.present(svc, animated: true, completion: nil)
                
             }
+            */
             else {
                print("nu e")
             /*self.msgLabel.text = "Nu s-au gasit date!"
@@ -51,6 +88,7 @@ class BookVC: UIViewController, SFSafariViewControllerDelegate  {
     
     
     }
+        
     
     func safariViewControllerDidFinish(_ controller: SFSafariViewController)
     {

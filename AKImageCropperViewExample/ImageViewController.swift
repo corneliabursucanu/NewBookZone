@@ -5,19 +5,14 @@ import SafariServices
 
 
 final class ImageViewController: UIViewController{
-//, SFSafariViewControllerDelegate {
+
     
-    
-   //  private var urlString:String = "https://goodread.ro/recenzie-povestea-faridei-fata-care-invins-isis-de-farida-khalaf-andrea-c-hoffmann/"
     
     var tessText = " "
-    // MARK: - Properties
-    
+
     var image: UIImage!
     
-    // MARK: - Connections:
-    
-    // MARK: -- Outlets
+
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -69,7 +64,7 @@ final class ImageViewController: UIViewController{
         // 6
         tesseract.image = image.g8_blackAndWhite()
         tesseract.recognize()
-        tessText = tesseract.recognizedText.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        tessText = tesseract.recognizedText
        
         print("begining\(tessText)the end")
        
@@ -85,15 +80,7 @@ final class ImageViewController: UIViewController{
     }
     
     @IBAction func nextBtnTapped(_ sender: Any) {
-        
-        /*let svc = SFSafariViewController(url: NSURL(string: self.urlString)! as URL, entersReaderIfAvailable: true)
-        svc.delegate = self
-        self.present(svc, animated: true, completion: nil)
-         
-    */
-        
-     /*  let book = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "bookVC") as! BookVC
-        self.present(book, animated: true, completion: nil)*/
+       
         
     }
     
