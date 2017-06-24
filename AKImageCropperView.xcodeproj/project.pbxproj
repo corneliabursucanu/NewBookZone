@@ -34,6 +34,9 @@
 		43CBB40D1B870EBC00C8F9AE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43CBB40B1B870EBC00C8F9AE /* LaunchScreen.xib */; };
 		43CBB4241B8716EA00C8F9AE /* CropperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CBB4231B8716EA00C8F9AE /* CropperViewController.swift */; };
 		559A86F41EFA756400606A22 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A86F31EFA756400606A22 /* BookModel.swift */; };
+		559A87181EFC5A5600606A22 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A87171EFC5A5600606A22 /* MoreVC.swift */; };
+		559A87211EFED0D500606A22 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A87201EFED0D500606A22 /* BookCell.swift */; };
+		559A87231EFF15E200606A22 /* give_me_some_sugar in Resources */ = {isa = PBXBuildFile; fileRef = 559A87221EFF15E200606A22 /* give_me_some_sugar */; };
 		55D802B21EEF3BDA004CA04A /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 55D802B11EEF3BDA004CA04A /* tessdata */; };
 		55D802B51EEF3C20004CA04A /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D802B41EEF3C20004CA04A /* TesseractOCR.framework */; };
 		55D802B81EEF3C3A004CA04A /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D802B71EEF3C3A004CA04A /* libstdc++.6.0.9.tbd */; };
@@ -133,6 +136,9 @@
 		43CBB40C1B870EBC00C8F9AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		43CBB4231B8716EA00C8F9AE /* CropperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropperViewController.swift; sourceTree = "<group>"; };
 		559A86F31EFA756400606A22 /* BookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		559A87171EFC5A5600606A22 /* MoreVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
+		559A87201EFED0D500606A22 /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		559A87221EFF15E200606A22 /* give_me_some_sugar */ = {isa = PBXFileReference; lastKnownFileType = folder; path = give_me_some_sugar; sourceTree = "<group>"; };
 		55D802B11EEF3BDA004CA04A /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		55D802B41EEF3C20004CA04A /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
 		55D802B71EEF3C3A004CA04A /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
@@ -239,6 +245,7 @@
 		43CBB3FF1B870EBC00C8F9AE /* AKImageCropper */ = {
 			isa = PBXGroup;
 			children = (
+				559A87221EFF15E200606A22 /* give_me_some_sugar */,
 				43CBB4021B870EBC00C8F9AE /* AppDelegate.swift */,
 				01FA13EE1DDF0C6E006B8C3A /* Constants.swift */,
 				43CBB4231B8716EA00C8F9AE /* CropperViewController.swift */,
@@ -254,8 +261,10 @@
 			isa = PBXGroup;
 			children = (
 				4356D6131B8F3DE90033FDBD /* ImageViewController.swift */,
+				559A87201EFED0D500606A22 /* BookCell.swift */,
 				55D802C31EF14075004CA04A /* BookVC.swift */,
 				559A86F31EFA756400606A22 /* BookModel.swift */,
+				559A87171EFC5A5600606A22 /* MoreVC.swift */,
 				55D802C11EF14030004CA04A /* DataService.swift */,
 				55D802C51EF1DFF7004CA04A /* SignInVC.swift */,
 				43CBB40B1B870EBC00C8F9AE /* LaunchScreen.xib */,
@@ -435,6 +444,7 @@
 			files = (
 				43CBB4081B870EBC00C8F9AE /* Main.storyboard in Resources */,
 				55D802B21EEF3BDA004CA04A /* tessdata in Resources */,
+				559A87231EFF15E200606A22 /* give_me_some_sugar in Resources */,
 				55D802C01EEF541B004CA04A /* GoogleService-Info.plist in Resources */,
 				43CBB40D1B870EBC00C8F9AE /* LaunchScreen.xib in Resources */,
 				43CBB40A1B870EBC00C8F9AE /* Images.xcassets in Resources */,
@@ -546,9 +556,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				559A87211EFED0D500606A22 /* BookCell.swift in Sources */,
 				559A86F41EFA756400606A22 /* BookModel.swift in Sources */,
 				43CBB4051B870EBC00C8F9AE /* HomeViewController.swift in Sources */,
 				55D802C21EF14030004CA04A /* DataService.swift in Sources */,
+				559A87181EFC5A5600606A22 /* MoreVC.swift in Sources */,
 				55D802C61EF1DFF7004CA04A /* SignInVC.swift in Sources */,
 				01C48FBC1DEC250100FBBE34 /* CustomImageCropperOverlayView.swift in Sources */,
 				55D802C41EF14075004CA04A /* BookVC.swift in Sources */,
