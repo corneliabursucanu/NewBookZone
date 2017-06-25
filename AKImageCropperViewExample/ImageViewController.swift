@@ -6,7 +6,7 @@ import SafariServices
 
 final class ImageViewController: UIViewController{
 
-    
+    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     var tessText = " "
 
@@ -31,21 +31,20 @@ final class ImageViewController: UIViewController{
         
         imageView.image = image
         
-        addActivityIndicator()
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
         let scaledImage = scaleImage(image, maxDimension: 640)
         self.performImageRecognition(scaledImage)
         
     }
-   var activityIndicator:UIActivityIndicatorView!
+  
     
     
-    func addActivityIndicator() {
-        activityIndicator = UIActivityIndicatorView(frame: view.bounds)
-        activityIndicator.activityIndicatorViewStyle = .whiteLarge
-        activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.25)
-        activityIndicator.startAnimating()
-        view.addSubview(activityIndicator)
-    }
+
     
     
     func performImageRecognition(_ image: UIImage) {
@@ -64,20 +63,18 @@ final class ImageViewController: UIViewController{
         // 6
         tesseract.image = image.g8_blackAndWhite()
         tesseract.recognize()
-        tessText = tesseract.recognizedText
+        tessText = tesseract.recognizedText.trimmingCharacters(in: .whitespacesAndNewlines)
        
         print("begining\(tessText)the end")
        
         
         // 7
-        removeActivityIndicator()
+       activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
        
     }
     
-    func removeActivityIndicator() {
-        activityIndicator.removeFromSuperview()
-        activityIndicator = nil
-    }
+  
     
     @IBAction func nextBtnTapped(_ sender: Any) {
        
