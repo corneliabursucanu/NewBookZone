@@ -6,7 +6,8 @@ import SafariServices
 
 final class ImageViewController: UIViewController{
 
-    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
+   
+ 
     
     var tessText = " "
 
@@ -31,12 +32,7 @@ final class ImageViewController: UIViewController{
         
         imageView.image = image
         
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
+       
         let scaledImage = scaleImage(image, maxDimension: 640)
         self.performImageRecognition(scaledImage)
         
@@ -68,9 +64,7 @@ final class ImageViewController: UIViewController{
         print("begining\(tessText)the end")
        
         
-        // 7
-       activityIndicator.stopAnimating()
-        UIApplication.shared.endIgnoringInteractionEvents()
+    
        
     }
     
@@ -116,7 +110,9 @@ final class ImageViewController: UIViewController{
         if segue.identifier == "bookVC"{
             if let destination = segue.destination as? BookVC {
                 print(tessText)
-                destination.isbn = tessText
+                let recText = tessText.replacingOccurrences(of: "~", with: "-")
+                
+                destination.isbn = recText.replacingOccurrences(of: "—", with: "-")
             
             }
     

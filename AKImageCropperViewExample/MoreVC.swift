@@ -19,13 +19,20 @@ class MoreVC: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var bookisbn: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate =  self
         
-
+        print("I RECEIVED \(bookisbn)")
+        var isbnSearch = bookisbn.replacingOccurrences(of:"-", with:"")
+        print (isbnSearch)
+        
+    
+        
       
     }
 

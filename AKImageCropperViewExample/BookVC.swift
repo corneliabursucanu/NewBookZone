@@ -14,45 +14,71 @@ import WebKit
 
 class BookVC: UIViewController, SFSafariViewControllerDelegate  {
     
-   
+    @IBOutlet weak var webView: UIWebView!
+    
     var isbn = " "
+    var newisbn = ""
     
     @IBOutlet weak var msgLabel: UILabel!
     
- //  private var urlString:String = "https://goodread.ro/recenzie-povestea-faridei-fata-care-invins-isis-de-farida-khalaf-andrea-c-hoffmann/"
-
+    //  private var urlString:String = "https://goodread.ro/recenzie-povestea-faridei-fata-care-invins-isis-de-farida-khalaf-andrea-c-hoffmann/"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(isbn)
         msgLabel.isHidden = true
         
-     //  let trimmed = isbn.replacingOccurrences(of: " ", with: "")
-    //  print(trimmed)
+        //  let trimmed = isbn.replacingOccurrences(of: " ", with: "")
+        //  print(trimmed)
         
         
         let startIndex = isbn.index(isbn.startIndex, offsetBy: 5)
         let endIndex = isbn.index(isbn.startIndex, offsetBy: 21)
         
-        let newisbn = isbn[startIndex...endIndex]
+        newisbn = isbn[startIndex...endIndex]
         print(newisbn)
         
         queryEmail(of: newisbn) {
             (link) in
             if let link = link {
-               // print("THE LINK IIIISSSS \(link)")
-               let bookUrl = URL(string: link)
-                let safariVC = SFSafariViewController(url: bookUrl as! URL)
-                safariVC.delegate = self
-                self.present(safariVC,animated: true, completion: nil)
+                // print("THE LINK IIIISSSS \(link)")
                 
                 
+                let bookUrl = URL(string: link)
                 
-            } else {
+                /*
+                 let safariVC = SFSafariViewController(url: bookUrl as! URL)
+                 safariVC.delegate = self
+                 self.present(safariVC,animated: true, completion: nil)
+                 
+                 */
+                
+                
+                let request = URLRequest(url: bookUrl!)
+                let session = URLSession.shared
+                let task = session.dataTask(with: request){ (data, response, error ) in
+                    
+                    if error == nil{
+                        self.webView.loadRequest(request)
+                        
+                    }
+                        
+                    else {
+                        
+                        print("ERROR: \(error)")
+                    }
+                    
+                    
+                }
+                task.resume()
+            }
+                
+            else {
                 print("Link not found")
             }
         }
-       
-     
+        
+        
         
     }
     
@@ -78,14 +104,30 @@ class BookVC: UIViewController, SFSafariViewControllerDelegate  {
         
         
         self.present(home, animated: true, completion: nil)    }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
- 
- 
-
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "moreVC"{
+            if let destination = segue.destination as? MoreVC {
+                print(isbn)
+               
+                
+                destination.bookisbn = newisbn
+                
+            }
+            
+            
+            
+            
+        }
+    }
+    
+    
+    
+    
+    
 }
