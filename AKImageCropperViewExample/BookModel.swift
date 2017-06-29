@@ -1,9 +1,9 @@
 //
 //  BookModel.swift
-//  AKImageCropperView
+
 //
 //  Created by Cornelia Bursucanu on 6/21/17.
-//  Copyright © 2017 Artem Krachulov. All rights reserved.
+
 //
 
 import Foundation

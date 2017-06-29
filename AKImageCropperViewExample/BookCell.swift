@@ -1,9 +1,9 @@
 //
 //  BookCell.swift
-//  AKImageCropperView
+
 //
 //  Created by Cornelia Bursucanu on 6/24/17.
-//  Copyright © 2017 Artem Krachulov. All rights reserved.
+
 //
 
 import UIKit

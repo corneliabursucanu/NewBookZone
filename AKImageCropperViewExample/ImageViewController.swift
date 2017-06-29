@@ -110,9 +110,13 @@ final class ImageViewController: UIViewController{
         if segue.identifier == "bookVC"{
             if let destination = segue.destination as? BookVC {
                 print(tessText)
-                let recText = tessText.replacingOccurrences(of: "~", with: "-")
+                var recText = tessText.replacingOccurrences(of: "~", with: "-")
+                recText = recText.replacingOccurrences(of: " ", with: "")
+                recText = recText.replacingOccurrences(of: ":", with: "")
+
                 
                 destination.isbn = recText.replacingOccurrences(of: "—", with: "-")
+                
             
             }
     

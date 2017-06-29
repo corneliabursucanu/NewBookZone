@@ -3,38 +3,45 @@
 //  AKImageCropperView
 //
 //  Created by Cornelia Bursucanu on 6/22/17.
-//  Copyright © 2017 Artem Krachulov. All rights reserved.
-//
+
 
 import UIKit
 import SafariServices
 
-class MoreVC: UIViewController {
+class MoreVC: UIViewController, SFSafariViewControllerDelegate {
     
     var books = [[String:Any]]()
+    var booktitle: String?
+    var bookauthor: String?
 
-
-    @IBOutlet weak var tableView: UITableView!
     
-
-    @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var otherImage: UIButton!
     var bookisbn: String!
     
+    @IBOutlet weak var msgLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
-        searchBar.delegate =  self
+       
+        msgLabel.isHidden = true
+        otherImage.isHidden = true
         
-        print("I RECEIVED \(bookisbn)")
-        var isbnSearch = bookisbn.replacingOccurrences(of:"-", with:"")
-        print (isbnSearch)
+        print("I RECEIVED \(bookisbn) and \(booktitle)")
+        let isbnSearch = bookisbn.replacingOccurrences(of:"-", with:"")
+        booktitle = booktitle?.replacingOccurrences(of: " ", with: "")
+        bookauthor = bookauthor?.replacingOccurrences(of: " ", with: "")
+        print(isbnSearch)
         
-    
         
-      
+         print("---------------")
+       downloadBookByIsbn(isbn: isbnSearch)
+        
+        
+        
+
     }
+    
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,15 +49,17 @@ class MoreVC: UIViewController {
     }
     
     
-
-    func downloadBook(bookTitle:String) {
     
-        var stringUrl = "https://www.googleapis.com/books/v1/volumes?q=\(bookTitle)"
+    
+    func downloadBookByIsbn(isbn:String) {
+        
+        let stringUrl =  "https://www.googleapis.com/books/v1/volumes?q=isbn:\(isbn)"
+
         
         guard let url = NSURL(string: stringUrl) else{
             print("You have a problem with the url")
             return
-        
+            
         }
         
         let urlRequest = NSMutableURLRequest(url:url as URL)
@@ -63,153 +72,192 @@ class MoreVC: UIViewController {
             guard data != nil else {
                 print("No data downloaded")
                 return
-            
+                
             }
             
-            do {
             
+            
+            do {
+                
                 if let data = data,
                     let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
                     let items = json["items"] as? [[String:Any]]  {
-                print(items)
+                  //  print(items)
+                    
+                    
                     self.books = items
-               print("I DID IT")
-                    DispatchQueue.main.async {
                     
-                   self.tableView.reloadData()
                     
+                    for book in self.books {
+                        
+                         let volumeInfo = book["volumeInfo"] as! [String:Any]
+                        let title = volumeInfo["title"] as! String
+                            let link = volumeInfo["previewLink"] as! String
+                        
+                   print("THANKS GOD\(link)")
+                        print("titlul este \(title)")
+                        
+                        let svc = SFSafariViewController(url: NSURL(string: link)! as URL)
+                        svc.delegate = self
+                        self.present(svc, animated: true, completion: nil)
+
+                        
+                       
+                        
+                        
+                        
                     }
-                
+                    
+              //      print("I DID IT BY ISBN")
+                    DispatchQueue.main.async {
+                        
+                    }
+                    
                 }
                 
+                
+                else {
+                    print("Nu am gasit cu ISBN")
+                    if self.booktitle != nil {
+                        if self.bookauthor != nil {
+                    
+                    self.downloadBookByTitle(titlu: self.booktitle!, autor:self.bookauthor!)
+                    
+                    
+                }
+            }
+                    
+                    else {
+                    
+                        print("N-am nici titlu nici autor")
+                        self.msgLabel.isHidden = false
+                        self.otherImage.isHidden = false
+                    }
+                    
+            
             
             }
-            
+        }
                 
-             catch{
-            
+            catch{
+                
                 print("Error with JSON")
             }
-         
+            
+                    })
+        task.resume()
+        
+        
+        
+    }
+    
+    
+    
+    func downloadBookByTitle(titlu:String, autor: String) {
+        
+        let stringUrl =  "https://www.googleapis.com/books/v1/volumes?q=\(titlu)+\(autor)"
+        
+        
+        guard let url = NSURL(string: stringUrl) else{
+            print("You have a problem with the url")
+            return
+            
+        }
+        
+        let urlRequest = NSMutableURLRequest(url:url as URL)
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        // make the request
+        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: { (data, response, error) in
+            
+            guard data != nil else {
+                print("No data downloaded")
+                return
+                
+            }
             
             
             
-            print(error)
-            print(response)
+            do {
+                
+                if let data = data,
+                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                    
+                    let items = json["items"] as? [[String:Any]]  {
+                    //  print(items)
+                    
+                    
+                    self.books = items
+                    
+                    
+                    for book in self.books {
+                        
+                        let volumeInfo = book["volumeInfo"] as! [String:Any]
+                        let title = volumeInfo["title"] as! String
+                        let link = volumeInfo["previewLink"] as! String
+                        
+                        print("THANKS GOD\(link)")
+                        print("titlul este \(title)")
+                        
+                        let svc = SFSafariViewController(url: NSURL(string: link)! as URL)
+                        svc.delegate = self
+                        self.present(svc, animated: true, completion: nil)
+                        
+                        
+                        
+                        
+                        
+                        
+                    }
+                    
+                    //      print("I DID IT BY ISBN")
+                    DispatchQueue.main.async {
+                        
+                    }
+                    
+                }
+                    
+                    
+                else {
+                    print("Nu am gasit cu ISBN")
+                    
+                    
+                    
+                }
+                
+                
+            }
+                
+                
+            catch{
+                
+                print("Error with JSON")
+            }
+            
+            
+        
         })
         task.resume()
-            
         
         
-        }
         
-  
-    
-    
-}
-
-
-extension MoreVC: UITableViewDataSource{
-  
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return books.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath) as? BookCell
-    
-    
-        if let volumeInfo = self.books[indexPath.row]["volumeInfo"] as? [String:Any]{
-        
-            let titlu = volumeInfo["title"] as? String
-            print("the titlu is \(titlu)")
-            
-            
-            if let imageLinks = volumeInfo["imageLinks"] as? [String:Any] {
-            
-            let imageUrl = imageLinks["thumbnail"] as? String
-            print("the image url is \(imageUrl)")
-            
-            cell?.configureCell(title: titlu!, image: imageUrl!)
 
-            }
-        
-            
-            
-            
-        }
-        
     
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController)
+    {
+        let home = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+        self.present(home, animated: true, completion: nil)
+        self.otherImage.isHidden = false
         
-        
-        
-        
-        return cell!
     }
-    
-    
-    
     
     
     
 }
 
 
-extension MoreVC:UISearchBarDelegate{
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        let bookTitle = searchBar.text
-        
-        self.downloadBook(bookTitle: bookTitle!)
-        
-        searchBar.resignFirstResponder()
-    }
-
-
-}
-
-
-extension MoreVC: UITableViewDelegate{
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-       // let selectedBook = self.books[indexPath.row]["volumeInfo"]["title"]
-       
-        if let volumeInfo = self.books[indexPath.row]["volumeInfo"] as? [String:Any]{
-            
-            let link = volumeInfo["previewLink"] as? String
-            
-            let fileUrl = NSURL(string: link!)
-            
-
-    
-        
-        let safariVC = SFSafariViewController(url: fileUrl! as URL)
-      safariVC.delegate = self
-    self.present(safariVC,animated: true, completion: nil)
-            
-            
-          
-            
-        
-    }
-}
-}
-
-
-extension MoreVC: SFSafariViewControllerDelegate{
-    
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-
-
-}
 

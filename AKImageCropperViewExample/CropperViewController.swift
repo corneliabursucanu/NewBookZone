@@ -34,8 +34,8 @@ final class CropperViewController: UIViewController {
             
             alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.cancel, handler: { _ in
                 
-                _ = self.navigationController?.popViewController(animated: true)
-            }))
+            let home = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+                    self.present(home, animated: true, completion: nil)}))
             
             alertController.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil))
             

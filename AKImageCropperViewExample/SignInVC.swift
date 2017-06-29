@@ -1,9 +1,9 @@
 //
 //  SignInVC.swift
-//  AKImageCropperView
+
 //
 //  Created by Cornelia Bursucanu on 6/15/17.
-//  Copyright © 2017 Artem Krachulov. All rights reserved.
+
 //
 
 import UIKit
