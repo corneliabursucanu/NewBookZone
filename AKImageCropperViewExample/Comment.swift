@@ -15,11 +15,11 @@ struct Comment {
     var bookId: String!
     var userId: String!
     var commentId: String!
-    var commentText: String
+    var commentText: String!
     var ref: DatabaseReference!
     var key: String = ""
     
-    init(userId: String, commentText: String, commentId:String, bookId: String, key: String = "", type:String){
+    init(userId: String, commentText: String, commentId:String, bookId: String, key: String = ""){
         self.bookId = bookId
         self.commentText = commentText
         self.userId = userId

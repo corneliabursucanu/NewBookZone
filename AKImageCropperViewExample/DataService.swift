@@ -59,6 +59,7 @@ private var _REF_COMM = DB_BASE.child("Comments")
                 resultArray.append(comment)
             }
             completion(resultArray)
+          
             
         }) { (error) in
             print(error.localizedDescription)
@@ -66,7 +67,7 @@ private var _REF_COMM = DB_BASE.child("Comments")
         
     }
   
-    /*
+    
     
     func saveCommentToDB(comment: Comment, completed: @escaping ()->Void){
         
@@ -75,14 +76,38 @@ private var _REF_COMM = DB_BASE.child("Comments")
             if let error = error {
                 print(error.localizedDescription)
             }else {
-                let alertView = ALERT
-                _ = alertView.showSuccess("Success", subTitle: "Comment saved successfuly", closeButtonTitle: "Done", duration: 4, colorStyle: UIColor(colorWithHexValue: 0x3D5B94), colorTextButton: UIColor.white)
-                completed()
+                let alertController = UIAlertController(title: "Succes", message:
+                    "Comentariul a fost adaugat", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+
+             completed()
             }
         }
         
     }
  
- */
+ 
+    
+    func fetchPostUserInfo(uid: String, completion: @escaping (User?)->()){
+        
+        
+        let userRef = REF_USERS.child(uid)
+        
+        userRef.observeSingleEvent(of: .value, with: { (currentUser) in
+            
+            let user: User = User(snapshot: currentUser)
+           print(user)
+            completion(user)
+            
+            
+            
+            
+        }) { (error) in
+            print(error.localizedDescription)
+            
+        }
+        
+        
+    }
     
 }

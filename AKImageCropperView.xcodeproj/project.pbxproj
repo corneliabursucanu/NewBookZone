@@ -35,6 +35,8 @@
 		43CBB4241B8716EA00C8F9AE /* CropperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CBB4231B8716EA00C8F9AE /* CropperViewController.swift */; };
 		559380F21F01DA78006C5752 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559380F11F01DA78006C5752 /* CommentTableViewCell.swift */; };
 		559380FA1F022839006C5752 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559380F91F022839006C5752 /* Comment.swift */; };
+		559381031F0487A4006C5752 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559381021F0487A4006C5752 /* User.swift */; };
+		559381071F049C27006C5752 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559381061F049C27006C5752 /* CommentsTableViewController.swift */; };
 		559A86F41EFA756400606A22 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A86F31EFA756400606A22 /* BookModel.swift */; };
 		559A87181EFC5A5600606A22 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A87171EFC5A5600606A22 /* MoreVC.swift */; };
 		559A87211EFED0D500606A22 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A87201EFED0D500606A22 /* BookCell.swift */; };
@@ -139,6 +141,8 @@
 		43CBB4231B8716EA00C8F9AE /* CropperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropperViewController.swift; sourceTree = "<group>"; };
 		559380F11F01DA78006C5752 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		559380F91F022839006C5752 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		559381021F0487A4006C5752 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		559381061F049C27006C5752 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		559A86F31EFA756400606A22 /* BookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		559A87171EFC5A5600606A22 /* MoreVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		559A87201EFED0D500606A22 /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
@@ -261,15 +265,25 @@
 			path = AKImageCropperViewExample;
 			sourceTree = "<group>";
 		};
+		559380FF1F04868D006C5752 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				559A86F31EFA756400606A22 /* BookModel.swift */,
+				559381021F0487A4006C5752 /* User.swift */,
+				559380F91F022839006C5752 /* Comment.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		55D802B31EEF3BF3004CA04A /* BookZone */ = {
 			isa = PBXGroup;
 			children = (
 				4356D6131B8F3DE90033FDBD /* ImageViewController.swift */,
 				559380F11F01DA78006C5752 /* CommentTableViewCell.swift */,
+				559381061F049C27006C5752 /* CommentsTableViewController.swift */,
 				559A87201EFED0D500606A22 /* BookCell.swift */,
+				559380FF1F04868D006C5752 /* Models */,
 				55D802C31EF14075004CA04A /* BookVC.swift */,
-				559380F91F022839006C5752 /* Comment.swift */,
-				559A86F31EFA756400606A22 /* BookModel.swift */,
 				559A87171EFC5A5600606A22 /* MoreVC.swift */,
 				55D802C11EF14030004CA04A /* DataService.swift */,
 				43CBB4041B870EBC00C8F9AE /* HomeViewController.swift */,
@@ -570,8 +584,10 @@
 				559A87181EFC5A5600606A22 /* MoreVC.swift in Sources */,
 				55D802C61EF1DFF7004CA04A /* SignInVC.swift in Sources */,
 				01C48FBC1DEC250100FBBE34 /* CustomImageCropperOverlayView.swift in Sources */,
+				559381031F0487A4006C5752 /* User.swift in Sources */,
 				55D802C41EF14075004CA04A /* BookVC.swift in Sources */,
 				559380F21F01DA78006C5752 /* CommentTableViewCell.swift in Sources */,
+				559381071F049C27006C5752 /* CommentsTableViewController.swift in Sources */,
 				43CBB4241B8716EA00C8F9AE /* CropperViewController.swift in Sources */,
 				01FA13EF1DDF0C6E006B8C3A /* Constants.swift in Sources */,
 				43CBB4031B870EBC00C8F9AE /* AppDelegate.swift in Sources */,

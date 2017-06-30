@@ -12,12 +12,8 @@ import FirebaseCore
 import Firebase
 import WebKit
 
-class BookVC: UIViewController, SFSafariViewControllerDelegate, UITableViewDataSource{
+class BookVC: UIViewController, SFSafariViewControllerDelegate{
    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-
     
    
     @IBOutlet weak var otherImageBtn: UIButton!
@@ -26,18 +22,19 @@ class BookVC: UIViewController, SFSafariViewControllerDelegate, UITableViewDataS
     var newisbn = ""
     var titlu: String!
     var autor: String!
+    var bookId: String!
+    var data = DataService()
     
     @IBOutlet weak var msgLabel: UILabel!
     @IBOutlet weak var googleBtn: UIButton!
     
     @IBOutlet weak var addcommBtn: UIButton!
-    @IBOutlet weak var commentsTableView: UITableView!
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(isbn)
-        commentsTableView.isHidden = true
         addcommBtn.isHidden = true
         googleBtn.isHidden = true
         msgLabel.isHidden = true
@@ -102,21 +99,10 @@ class BookVC: UIViewController, SFSafariViewControllerDelegate, UITableViewDataS
                 self.otherImageBtn.isHidden = false
             }
         }
-        
-        
+  
         
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = commentsTableView.dequeueReusableCell(withIdentifier: "commentCell") as! CommentTableViewCell
-        
-        return cell
-    }
     
     
     func queryEmail(of ISBN: String, completion: @escaping (String?) -> Void) {
@@ -132,7 +118,9 @@ class BookVC: UIViewController, SFSafariViewControllerDelegate, UITableViewDataS
             let bookprop = carti.first!.value as! [String: Any]
            self.titlu = bookprop["Titlu"] as? String
         self.autor = bookprop["Autor"] as? String
+        self.bookId = bookprop["bookId"] as? String
             completion(bookprop["Link"] as? String)
+    
         }
     }
     
@@ -140,7 +128,9 @@ class BookVC: UIViewController, SFSafariViewControllerDelegate, UITableViewDataS
     {
         
          controller.dismiss(animated: true, completion: nil)
-        self.googleBtn.isHidden = false
+       // self.googleBtn.isHidden = false
+        addcommBtn.isHidden = false
+      
         
         
         
@@ -167,10 +157,25 @@ class BookVC: UIViewController, SFSafariViewControllerDelegate, UITableViewDataS
             
             
         }
+        
+        
+        if segue.identifier == "commVC"{
+            if let destination = segue.destination as? CommentsTableViewController {
+                print(bookId)
+          destination.bookId = bookId
+          destination.isbn = newisbn
+          destination.booktitle = titlu
+          destination.bookauthor = autor
+
+        
+        
+        }
     }
+        
     
     
     
     
+    }
     
 }
